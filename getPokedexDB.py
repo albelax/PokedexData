@@ -65,10 +65,16 @@ for i in page:
 dst = open("pokemonDB.txt",'a')
 for i in finalDB:
     #if i[0] == 150:
-    print i
-    dst.write(str(i))
+    #print i
+    for j in range(len(i)):
+        if (j == 0):
+            if (int(i[j]) < 10):
+                i[j] = '00'+str(i[j])
+            elif (int(i[j]) < 100):
+                i[j] = '0'+str(i[j])
+        dst.write(str(i[j]))
+        dst.write(";")
     dst.write('\n')
-
 dst.close();
 
 
